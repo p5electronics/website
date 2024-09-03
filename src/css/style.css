@@ -1,0 +1,195 @@
+/* CSS Variables */
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --yellow: #f4f201;
+  --grey: #9fa6b0;
+  --orange: #fe8100;
+  --blue: #3903dc;
+  --amber-600: #d97706;
+  --amber-700: #b45309;
+  --amber-800: #92400e;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* CSS Normalization */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+picture {
+  width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p{
+  padding: 10px 0 10px 0;
+  margin: 0 auto; 
+} 
+
+/* Blockquotes */
+
+.bq-orange {
+  border-left: 4px solid var(--orange); 
+  padding-left: 16px; 
+  margin: 0 auto; 
+  width: 90%; 
+}
+
+.bq-blue {
+  border-left: 4px solid var(--blue); 
+  padding-left: 16px; 
+  margin: 0 auto; 
+  width: 90%; 
+}
+
+/* Utility Classes */
+
+.main {
+  width: 60%; 
+  margin: 0 auto;
+};
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Header Styles */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+  padding: 1rem 1.5rem;
+  color: var(--white);
+  background-color: var(--black);
+  
+}
+
+.header__title {
+  position: relative;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  color: var(--amber-600);
+}
+
+.header__links {
+  display: flex;
+  gap: 2rem;
+}
+
+.header__link {
+  position: relative;
+  font-size: 1.125rem;
+  color: var(--grey);
+}
+
+.header__link::after {
+  content: "";
+  left: 0px;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  background-color: var(--yellow);
+  transform: scaleX(0);
+  transition: transform 0.3s ease 0s;
+}
+
+.header__link:hover {
+  color: var(--white); 
+}
+
+.header__link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Header Logo Formatting */
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  margin-right: 10px; 
+}
+.logo p {
+  text-rendering: optimizeSpeed;
+  font-size: 2.000rem;
+  font-family: "Inter", sans-serif;
+}
+
+.footer {
+  flex-shrink: 0;
+  width: 100%;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Style for the links */
+.post__link {
+  color: #FFA500; /* Set link color to orange */
+  text-decoration: none; /* Remove underline from links */
+  transition: color 0.3s, text-decoration 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Style for links on hover */
+.post__link:hover {
+  color: #FF4500; /* Darker orange color on hover */
+  text-decoration: underline; /* Underline links on hover */
+}

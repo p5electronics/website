@@ -1,0 +1,21 @@
+<style>
+  .post__link {
+    color: black; 
+    font-weight: bold;
+    text-decoration: none; 
+    transition: color 0.3s, text-decoration 0.3s; 
+  }
+
+  .post__link:hover {
+    color: #FF4500; 
+    text-decoration: underline; 
+  }
+</style>
+
+<ul>
+{% for post in collections.posts %}
+  <li>
+    <a class="post__link"  href="{{ post.url }}">{{ post.data.title }}</a> - {{ post.date | date("DDD") }}
+  </li>
+{% endfor %}
+</ul>
