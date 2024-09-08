@@ -15,7 +15,7 @@
 <ul>
 {% for post in collections.posts %}
   <li>
-    <a class="post__link"  href="{{ post.url }}">{{ post.data.title }}</a> - {{ post.date | date("DDD") }}
+    <a class="post__link"  style="color: var(--theme-text);" href="{{ post.url }}">{{ post.data.title }}</a> - {{ post.date | date("DDD") }}
   </li>
 {% endfor %}
 </ul>

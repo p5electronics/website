@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.body.classList.add('no-transition');
+    })();
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +24,34 @@
   <div class="content">
     {% include "header.njk" %}
     <main class="main container">
-      <h1>{{title}}.</h1>
+      <h1>{{title}}</h1>
+      <p>Posted on: {{date}}</p>
       {{ content | safe }}
-      <p>Read More</p>
     </main>
   </div>
   {% include "footer.njk" %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const currentTheme = localStorage.getItem('theme') || 'light';
+
+      // Initialize theme
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      themeToggle.textContent = currentTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+
+      themeToggle.addEventListener('click', function() {
+        const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeToggle.textContent = newTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+
+        // Add no-transition class to prevent smooth transitions
+        document.body.classList.add('no-transition');
+        setTimeout(() => {
+          document.body.classList.remove('no-transition');
+        }, 0); // Set to 0 to immediately remove the class after applying
+      });
+    });
+  </script>
 </body>
-</html> 
+</html>

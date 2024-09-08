@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="../scripts/darkmode-storage.js" type="text/javascript"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,18 +16,30 @@
 <body>
   <div class="content">
     <header class="header container">
+
+    <!-- Home Logo -->
     <a href="/index">
       <div class="logo">
           <img src="/phazefive.png" width="75" height="75" alt="Phase Five Logo"/>
           <p>phasefive</p>
       </div>
     </a>
+
+    <!-- Navbar Options -->
     <ul class="header__links">
       <li><a class="header__link" href="/about">about</a></li>
       <li><a class="header__link" href="/blog">blog</a></li>
       <li><a class="header__link" href="/socials">socials</a></li>
+
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider round"></span>
+    </label>
+
     </ul>
 </header>
+
+
     <main class="main container">
       <h1>blog.</h1>
 <style>
@@ -46,15 +59,15 @@
 <ul>
 
   <li>
-    <a class="post__link"  href="/blog/thirdpost/">Third post</a> - September 2, 2024
+    <a class="post__link"  style="color: var(--theme-text);" href="/blog/2024/thirdpost/">Test Post</a> - September 2, 2024
   </li>
 
   <li>
-    <a class="post__link"  href="/blog/secondpost/">My Second Blog Post</a> - September 1, 2024
+    <a class="post__link"  style="color: var(--theme-text);" href="/blog/2024/lissajou/">Lissajou Curves</a> - September 1, 2024
   </li>
 
   <li>
-    <a class="post__link"  href="/blog/firstpost/">First Post</a> - August 31, 2024
+    <a class="post__link"  style="color: var(--theme-text);" href="/blog/2024/firstpost/">First Post!</a> - August 31, 2024
   </li>
 
 </ul>
@@ -63,5 +76,6 @@
   <footer class="footer">
     <p>made with ❤<br>&copy;2024 Hugo The Immortal</p>
 </footer>
+  <script src="../scripts/darkmode-toggle.js" type="text/javascript"></script>
 </body>
 </html> 

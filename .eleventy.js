@@ -1,9 +1,11 @@
 
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("./src/css/style.css");
+  eleventyConfig.addPassthroughCopy("./src/**/*.{svg,webp,png,jpeg,gif,js}"); 
 	eleventyConfig.addWatchTarget("./src/css/");
-	eleventyConfig.addWatchTarget("./src/**/*.{svg,webp,png,jpeg}");
-
+	eleventyConfig.addWatchTarget("./src/**/*.{svg,webp,png,jpeg,gif,js}");
+  
   eleventyConfig.addFilter("date", require("./src/filters/date.js"));
 
   eleventyConfig.addCollection("posts", function(collectionApi) {
