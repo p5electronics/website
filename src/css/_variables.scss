@@ -1,0 +1,43 @@
+// Normal Color Palette 
+$white: #ffffff;
+$black: #000000;
+$grey: #9fa6b0;
+
+// Rainbow Color Palette 
+$red:#f70200;
+$orange: #fe8100;
+$yellow: #f4f201;
+$green: #41fe01;
+$blue: #3903dc;
+
+/* EDIT: Lightmode Theme Color Palette */
+$light-background: #fff;
+$light-background-secondary: #eaeaea;
+$light-background-header: #fafafa;
+$light-color: #222;
+$light-color-variant: black;
+$light-color-secondary: #999;
+$light-border-color: #dcdcdc;
+$light-table-color: #dcdcdc;
+
+/* EDIT: Darkmode Theme Color Palette */
+$dark-background: #232425;
+$dark-background-secondary: #3b3d42;
+$dark-background-header: #1b1c1d;
+$dark-color: #ffffff;
+$dark-color-variant: #ff9000;
+$dark-color-secondary: #b3b3bd;
+$dark-border-color: #4e4e57;
+$dark-table-color: #4e4e57;
+
+/* Sizing Variables */
+$max-width: 860px;
+
+/* Responsive Sizing Variables */
+$media-size-phone: "(max-width: 684px)";
+$media-size-tablet: "(max-width: 900px)";
+
+:root {
+    --phoneWidth: (max-width: 684px);
+    --tabletWidth: (max-width: 900px);
+}

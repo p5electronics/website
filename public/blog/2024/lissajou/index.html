@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    (function() {
-      const theme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', theme);
-      document.body.classList.add('no-transition');
-    })();
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+ 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,37 +12,53 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="/css/style.css">
   <title>user@p5: ~/Lissajou Curves/</title>
+
+  <script src="/scripts/darkmode-storage.js" type="text/javascript"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="/scripts/reading-time.js"></script>
 </head>
 <body>
   <div class="content">
-    <header class="header container">
+    <header class="header">
 
-    <!-- Home Logo -->
-    <a href="/index">
+    <!-- Logo Options -->
+    <a href="/" style="text-decoration: none;">
       <div class="logo">
-          <img src="/phazefive.png" width="75" height="75" alt="Phase Five Logo"/>
-          <p>phasefive</p>
+          <img class="logo__image" src="/phazefive.png" width="75" height="75" alt="Phase Five Logo"/>
+          <p class="logo__text">phasefive</p>
       </div>
     </a>
 
-    <!-- Navbar Options -->
-    <ul class="header__links">
-      <li><a class="header__link" href="/about">about</a></li>
-      <li><a class="header__link" href="/blog">blog</a></li>
-      <li><a class="header__link" href="/socials">socials</a></li>
+    <!-- Navbar Options EDIT -->
+    <nav class="menu">
+      <ul class="header__links">
+        <li><a class="header__link" href="/about">about</a></li>
+        <li><a class="header__link" href="/blog">blog</a></li>
+        <li><a class="header__link" href="/socials">socials</a></li>
 
-    <label class="switch">
-      <input type="checkbox" id="theme-toggle">
-      <span class="slider round"></span>
-    </label>
-
-    </ul>
+        <!-- Darkmode Options -->
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider round"></span>
+        </label>
+      </ul>
+    </nav>
 </header>
 
 
     <main class="main container">
       <h1>Lissajou Curves</h1>
-      <p>Posted on: 2024-09-02</p>
+      <p>Posted on: 2024-09-02 
+        <br>
+          Tagged as: 
+        <br/>
+        <div class="time-container">
+          <i class="material-icons" style="font-size:14px;">timer</i>
+          <span id="time"></span>
+        </div>
+      </p>
+      <article id="article">
       <p>Ever since I started my undergraduate degree, I've always looked forward to the day where I'd start drawing patterns on an analog oscilliscope for funsies. Today seems like just the right day to start experimenting and there's no better place to start than the fundamentals. I introduce to you, the <em>Lissajou curve</em>.</p>
 <div class="picture-container">
   <img src="lissajou.gif" alt="Lissajou Curve Light" class="theme-image light-mode">
@@ -65,11 +74,43 @@
     \end{cases}
     \]
 </div>
-<p>First investigated by Nathaniel Bowditch and later refined by its namesake Jules Antoine Lissajous (get mogged), these curves model the behavior that results from when two sinusoids lying on both the x-axis and y-axis directions of the cartesian plane are superposed.</p>
+<p>First investigated by Nathaniel Bowditch and later refined by its namesake Jules Antoine Lissajous (get mogged), these curves model the behavior that results from when two sinusoids lying on both the x and y directions of the cartesian plane are superposed.</p>
 <p>Over time, this figure has been proven to be a useful tool with a variety of applications such as signal processing, orbital mechanics, music theory, and art.</p>
-<p>Personally, I only had discovered the name of this pattern through one of my previous internships over at MIT Lincoln Laboratory because they had it as their logo (they are rather enthusiastic about explaining its history and you can read more about it <a href="https://www.ll.mit.edu/about/history/lincoln-laboratory-logo">here</a>).</p>
+<h3>Theory and Examples</h3>
+<p>By examining certain relationships between the variables in the equations, we can discover many things that influence the characteristics of a Lissajou curve.</p>
+<p>One place we can look, is at the ratio between the angular frequencies, \( \frac{a}{b} \). If this ratio is rational \( (\frac{a}{b} \in \mathbb{Q}) \), then the loop(s) of the curve will eventually close as the phase shift changes. On the other hand, if it is irrational \( (\frac{a}{b} \in \mathbb{I})\), the the loops of the curve will continue to be open.</p>
+<p>We can also take note of the ratio between the wave amplitudes, \( \frac{A}{B} \). This ratio affects the proportions of the curve, causing it to either &quot;squash&quot; or &quot;stretch,&quot; and can also lead to a rotation of the curve as the phase shift changes.</p>
+<div class="picture-container">
+  <img src="lissajou-graph.png" alt="Lissajou Curve Graph" class="theme-image light-mode">
+  <img src="lissajou-graph-dark.png" alt="Lissajou Curve Graph" class="theme-image dark-mode">
+  <figure>
+    <figcaption>Fig.1 - Lissajou curves with varying angular frequency ratios.
+      <br> 
+      (Image: <a href="#" target="_blank" rel="noopener noreferrer">Made with Matplotlib</a>)
+      <br/>
+    </figcaption>
+  </figure>
+</div>
+<p>The <em>eccentricity</em>, or how much a curve deviates from being a circle, is determined by the phase shift variable \( \delta \). This effect is best observed when the angular frequencies of the two waves are equal \((a = b)\). The graph below illustrates how the behavior of the curve changes over time as the phase shift varies under these conditions.</p>
+<p>Personally, I had only discovered the name of this pattern through one of my previous internships over at MIT Lincoln Laboratory (MITLL) since they had it as their logo. They are rather enthusiastic about explaining its history and you can read more about it <a href="https://www.ll.mit.edu/about/history/lincoln-laboratory-logo">here</a>.</p>
+<div class="picture-container">
+  <img src="ll-lissajou.svg" alt="LL Logo Light" class="theme-image light-mode">
+  <img src="ll-darkmode.svg" alt="LL Logo Dark" class="theme-image dark-mode">
+  <figure>
+    <figcaption>Fig.2 - The Official Logo of MITLL.
+      <br> 
+      (Image: <a href="https://commons.wikimedia.org/wiki/File:Lincoln_Lab_icon.png" target="_blank" rel="noopener noreferrer">Wikipedia Commons</a>)
+      <br/>
+    </figcaption>
+  </figure>
+</div>
+<h3>Generating a Lissajou Curve</h3>
+<p>To put away all the previous explanations, let's experiment by hooking up two sine waves to this old [brand name/model no.] oscilliscope I found on Facebook marketplace. Since I currently don't own a proper signal generator and I really want to play with breadboards more often, I will be designing  some sine wave generation circuits to do the job.</p>
+<p>Animations and charts for this article were made using Matplotlib. You can find the Python scripts that I used to generate them all on my <a href="https://github.com/p5electronics/website/blob/main/src/blog/2024/lissajou/animation.py">GitHub page</a>.</p>
 <p>Stay tuned for more!</p>
+<h3>References</h3>
 
+      </article>
     </main>
   </div>
   <footer class="footer">
