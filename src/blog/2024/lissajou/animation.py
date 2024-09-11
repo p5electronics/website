@@ -2,23 +2,12 @@
 # @ Created: 2024-09-05
 # @ Modified by: Hugo The Immortal
 # @ Last Modified: 2024-09-05
-# @ Description: An Animation of Lissajou Curves
+# @ Description: An Animation of Lissajou Curve
 
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation  
 from matplotlib.animation import PillowWriter
 import numpy as np
-
-# Amplitudes
-A = 1
-B = 1
-
-# Angular Frequencies
-a = 3
-b = 4
-
-# Phase
-delta = np.pi / 2
 
 plt.style.use('default')
 fig, ax = plt.subplots()
@@ -29,7 +18,18 @@ ax.set_xlabel('x(t)')
 ax.set_ylabel('y(t)')
 ax.set_title('Lissajou Curve')
 
+# Wave Amplitudes
+A = 1
+B = 1
 
+# Wave Angular Frequencies
+a = 3
+b = 4
+
+# Wave Phase
+delta = np.pi / 2
+
+# Display the changes in phase for Lissajou animation demo
 line, = ax.plot([], [], lw=2)
 
 def init():
@@ -47,4 +47,4 @@ anim = FuncAnimation(fig, update, frames=200, init_func=init, interval=20, blit=
 writer = PillowWriter(fps=30, metadata=dict(artist='Hugo'), bitrate=1800)
 
 plt.show()
-anim.save("./lissajou.gif", writer=writer)
+plt.close()
