@@ -30,8 +30,9 @@
 .picture-container {
   position: relative;
   width: 100%;
-  height: 400px; /* or use padding-top for aspect ratio */
+  height: 400px; 
   overflow: hidden;
+  margin: 0 auto;
 }
 
 /* Hide images by default */
@@ -46,6 +47,20 @@
   visibility: hidden; 
 }
 
+figure {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: var(--white); 
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+figure a {
+  color: var(--white);
+}
 /* Show the image for the current theme */
 [data-theme="light"] .theme-image.light-mode {
   opacity: 1;
@@ -111,8 +126,10 @@ select {
 }
 
 a {
+  color : var(--theme-text);
   text-decoration: underline;
-  color: var(--theme-link);
+  text-decoration-color: var(--theme-link);
+  text-decoration-thickness: 2px;
 }
 
 p {
@@ -143,12 +160,6 @@ blockquote {
   margin: 0 auto;
 }
 
-.container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
 .content {
   flex: 1 0 auto;
 }
@@ -164,6 +175,9 @@ blockquote {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem; 
   margin-bottom: 4rem;
   padding: 1rem 1.5rem;
   color: var(--white);
@@ -306,4 +320,15 @@ input:checked + .slider:before {
 /* CSS to disable transition */
 .no-transition .slider {
   transition: none !important;
+}
+
+
+.time-container {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+}
+
+/* Style for the icon */
+.time-container i.material-icons {
+  margin-right: 4px; /* Space between the icon and the time */
 }

@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-    (function() {
-      const theme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', theme);
-      document.body.classList.add('no-transition');
-    })();
-  </script>
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+ 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,48 +12,65 @@
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="/css/style.css">
   <title>user@p5: ~/First Post!/</title>
+
+  <script src="/scripts/darkmode-storage.js" type="text/javascript"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="/scripts/reading-time.js"></script>
 </head>
 <body>
   <div class="content">
-    <header class="header container">
+    <header class="header">
 
-    <!-- Home Logo -->
-    <a href="/index">
+    <!-- Logo Options -->
+    <a href="/" style="text-decoration: none;">
       <div class="logo">
-          <img src="/phazefive.png" width="75" height="75" alt="Phase Five Logo"/>
-          <p>phasefive</p>
+          <img class="logo__image" src="/phazefive.png" width="75" height="75" alt="Phase Five Logo"/>
+          <p class="logo__text">phasefive</p>
       </div>
     </a>
 
-    <!-- Navbar Options -->
-    <ul class="header__links">
-      <li><a class="header__link" href="/about">about</a></li>
-      <li><a class="header__link" href="/blog">blog</a></li>
-      <li><a class="header__link" href="/socials">socials</a></li>
+    <!-- Navbar Options EDIT -->
+    <nav class="menu">
+      <ul class="header__links">
+        <li><a class="header__link" href="/about">about</a></li>
+        <li><a class="header__link" href="/blog">blog</a></li>
+        <li><a class="header__link" href="/socials">socials</a></li>
 
-    <label class="switch">
-      <input type="checkbox" id="theme-toggle">
-      <span class="slider round"></span>
-    </label>
-
-    </ul>
+        <!-- Darkmode Options -->
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider round"></span>
+        </label>
+      </ul>
+    </nav>
 </header>
 
 
     <main class="main container">
       <h1>First Post!</h1>
-      <p>Posted on: 2024-09-01</p>
+      <p>Posted on: 2024-09-01 
+        <br>
+          Tagged as: 
+        <br/>
+        <div class="time-container">
+          <i class="material-icons" style="font-size:14px;">timer</i>
+          <span id="time"></span>
+        </div>
+      </p>
+      <article id="article">
       <div class="tenor-gif-embed" data-postid="20064759" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/breakingbad-gif-20064759">Breakingbad GIF</a>from <a href="https://tenor.com/search/breakingbad-gifs">Breakingbad GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 <p>Site is up and running now!</p>
 <p>I have to say, prior to launching this website, I never really thought I was the type to blog about STEM topics so freely as a hobby (I also never thought I would commit to writing a website in the first place because I absolutely <em>despise</em> web development).</p>
-<p>Who am I? I'm an engineer who's finally learning to embrace his surroundings.</p>
+<p>Who am I? I'm someone who's finally learning to embrace his surroundings.</p>
 <p>At the time of writing this blog, I’m a senior in undergrad who has completed all the big, scary weed-out courses and gained some internship experience. When I started college, I believed that excelling on paper, by earning As in all my classes and joining clubs, was the key to success. While this approach worked on the surface, I found myself taking many hits as I put in excessive effort to keep up with classes and balance my portfolio.</p>
 <p>This led me to places I didn’t want to be, eventually burning me out and briefly instilling a fear of exploring things outside my comfort zone. But there's <em>no reason</em> to be afraid.</p>
 <p>I imagine it isn't really easy or straightforward for anyone. There is a lot to learn, and sometimes it seems like there isn't enough time to take it all in. There is also a lot of BS, whether it’s being front-loaded with coursework, pushing papers at an internship, or cramming for exams all day. It can get tiring and stressful at times, and I've had my fair share of that. But there are many wonders to uncover, and none of that should deter you from doing so.</p>
 <p>I don't only want to use this blog to document my personal journey through engineering and science but also to encourage others who are wading through the swamp by reminding them that this stuff can be pretty awesome sometimes!</p>
 <p>To whoever is reading this, thanks for hearing me out and enjoy the show!</p>
-<p>P.S. - The <strong><a href="https://www.youtube.com/watch?v=kAVLPBM0brg">namesake</a></strong> for the blog, if anyone is curious, it's a fantastic album.</p>
+<p><strong>P.S.</strong> - The <strong><a href="https://www.youtube.com/watch?v=kAVLPBM0brg">namesake</a></strong> for the blog, if anyone is curious, it's a fantastic album &lt;3</p>
 
+      </article>
     </main>
   </div>
   <footer class="footer">
