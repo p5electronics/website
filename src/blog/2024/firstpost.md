@@ -11,7 +11,7 @@ Site is up and running now!
 
 I have to say, prior to launching this website, I never really thought I was the type to blog about STEM topics so freely as a hobby (I also never thought I would commit to writing a website in the first place because I absolutely *despise* web development).
 
-Who am I? I'm an engineer who's finally learning to embrace his surroundings.
+Who am I? I'm someone who's finally learning to embrace his surroundings.
 
 At the time of writing this blog, I’m a senior in undergrad who has completed all the big, scary weed-out courses and gained some internship experience. When I started college, I believed that excelling on paper, by earning As in all my classes and joining clubs, was the key to success. While this approach worked on the surface, I found myself taking many hits as I put in excessive effort to keep up with classes and balance my portfolio.
 
@@ -23,4 +23,4 @@ I don't only want to use this blog to document my personal journey through engin
 
 To whoever is reading this, thanks for hearing me out and enjoy the show!
 
-P.S. - The **[namesake](https://www.youtube.com/watch?v=kAVLPBM0brg)** for the blog, if anyone is curious, it's a fantastic album.
+**P.S.** - The **[namesake](https://www.youtube.com/watch?v=kAVLPBM0brg)** for the blog, if anyone is curious, it's a fantastic album <3
